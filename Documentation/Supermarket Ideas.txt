@@ -1,0 +1,104 @@
+Supermarket Ideas
+
+- There is no need to spend money to directly buy products. This is handled (story-wise) through the DFs, so stores get to keep all the revenue from their products.
+- The user plays the role of a store director who is given an empty store and a small amount of cash to start with.
+- The user can buy departments which sell products to customers.
+- The user cannot buy more than one of the same department.
+- Each department starts at Level 1. A department can be leveled up by the user at a cost which grows exponentially.
+- The store has a measure of customer satisfaction, which increases when things get better.
+- Customer satisfaction does not change unless the user makes a change (buys a department, buys an upgrade, etc.)
+- Customer satisfaction is measured in "satisfaction units", or "sats" for short. SI prefixes are applied to sats. If multiple "yotta-" prefixes are applied to the unit, they will be condensed (i.e. "yottayotta" becomes "yotta²", read "yotta-two").
+- The store's customers per second (C/S) is determined by the customer satisfaction and by the time of day/week/year:
+	- The satisfaction level is multiplied by something to produce a "base C/S" which is then multiplied by a factor based on the time of day/week/year.
+	- On weekdays, early evening is busiest, followed by afternoon, morning, evening, and finally overnight.
+	- Saturday is the busiest day, followed by Sunday, Friday, Thursday, Tuesday, Wednesday, and finally Monday.
+	- The store is busiest around the Christmas holiday shopping season, and maxes out on Thanksgiving and Black Friday.
+	- Individual departments have their own busy seasons (Seasonal around the summertime, etc.).
+- Actions that improve customer satisfaction will add an amount of sats for each customer per second already present.
+- Each department has the following key variables:
+	- Customers per second:
+		- Proportional to the levels of all departments.
+		- To determine a departments C/S:
+			1. Add all the levels of all departments together. This is the number of shares.
+			2. Divide the store's C/S by the number of shares. This is the customers per share.
+			3. Multiply the customers per share by the department's level. This is the department's C/S.
+			- Example: The sum of all department levels is 1,000 and the store has 1 billion customers per second. A department is at level 25.
+				1. There are 1000 shares.
+				2. Each share has 1,000,000 customers per second.
+				3. The level 25 department gets 25,000,000 customers per second.
+	- Share size: The amount of each share that a department gets per level.
+		- By default, this variable is 1x, but it is increased by having department sales.
+		- Even if one department has larger share sizes, it does not take customers from other departments. Example, using the department from above:
+			- The level 25 department has a share size of 1.1x.
+			- The department, by default, gets 25,000,000 customers per second, but with the increased share size, they get 27,500,000 customers per second.
+			- Other departments still get the same amount of customers.
+	- Products purchased per customer: Starts at 1, but can go up with leveling up and upgrades. Doesn't have to be an integer.
+	- Average product price: The revenue generated from each product sold.
+- The total revenue per second of a department is equal to (department customers per second * products purchased per customer * average product price).
+- The store's customers per second displayed to the user is the sum of all department customers per second values adjusted for their share size.
+
+- The user can hire employees and managers.
+- The user can hire as many employees for a department as they wish, but they can only have one manager per department per shift.
+- Each employee or manager takes an amount of wages each second.
+- Each successive employee does not cost more to employ than the last.
+- Each employee or manager improves some metric of the store (average product price, customer satisfaction, etc.).
+- Each successive employee's contribution to the metric is subject to diminishing returns. For example, 100 employees will do less than 100 times the work of 1 employee.
+- There are more than three available managers for each department - managers with more power cost much more in wages, and old managers have to be fired or transferred to make room.
+
+- All employees will, at random, start negotiations for higher wages. This negotiation occurs roughly once every 3-5 days.
+- While negotiations are occuring, all employee buffs are reduced by 50%.
+- Employees will ask for substantially higher wages, usually by a factor of hundreds or thousands. The exact amount is chosen at random, but smaller factors are more likely than higher factors.
+- Negotiations may fail or succeed. If they fail, wages stay at their previous levels. If they succeed, wages are increased to the level they requested.
+- Negotiations always fail if the requested wages are higher than the revenue per second recorded when the negotiations started. (This prevents the user from selling stuff to bring the revenue down.)
+- The user may choose to immediately accept the request, thereby increasing wages immediately, but receiving the lost 50% of employee buffs.
+- If the user does not accept the request, negotiations continue for 30 minutes to up to 3 hours. The negotiations may succeed or fail based on random chance.
+- The more previous negotiations failed, the more employees will ask for, and the more likely the current negotiations will succeed.
+
+- Some departments have a maximum level at which they can be at.
+- If the user reaches a department's maximum level, the game offers to split the department into at least two other departments that serve specialized subsets of the original department.
+	- Example: Electronics divides into Home Theater, Video Games, Electronics Staples, etc.
+- This forms a tree of departments and their divisions.
+- Departments at the bottom of the tree can be leveled up without bound.
+- Each department has a footprint in square feet (users can choose metric units in Settings).
+- Each store has a finite amount of square feet. If the user wishes to buy a new department and they have no space to put it, they must close an existing department to make room.
+- Closing departments reduces customer satisfaction.
+- The store's size is increased through Prestige. It eventually reaches a maximum size where all departments can fit perfectly.
+
+- The user can hire managers.
+- There is one manager for each department, along with managers for multiple departments (Food, etc.).
+- The user can purchase upgrades.
+- Each manager or upgrade improves one or more aspects of the store or its departments (customer satisfaction, customer satisfaction increases, product price, products per customer, etc.)
+
+- Over time, the store attracts Very Important Persons, or VIPs. The first VIP "costs" a large amount. Successive VIPs cost exponentially more than that.
+- The user can choose to claim their prestige. Story-wise, the store director is promoted and given control of a new, empty store. All VIPs follow the store director.
+- Apart from the VIPs, the user is starting over.
+- By default, VIPs give an x% increase to the customer satisfaction level per VIP.
+	- Example: If there are 1,000 VIPs, and each VIP gives +1% to the customer satisfaction level, the satisfaction level will be 10x higher than it would otherwise be.
+- After a few promotions, the store director is given control over Advertising. Here the user can hire the VIPs to buy advertising upgrades that greatly boost various aspects across all the user's stores.
+- As the promotions continue, more and more prestige upgrades become available. Some cost VIPs, others cost money, some cost both VIPs and money.
+- While selecting upgrades, the user keeps all the revenue earned from the last store, but loses it all when they start in a new store.
+- After enough promotions, the user can begin buying distribution companies and then the providers of the products themselves. Eventually, the user acquires scientific and research companies who produce Material Synthesizers, which substantially increase revenue while slightly reducing customer satisfaction (they don't like synthetic stuff as much).
+
+- Some departments are not standard (i.e. they don't receive customers or generate revenue).
+- One such department is the Service department. The user can hire utility workers, janitors, cashiers, and service desk attendants.
+- Utility workers push carts - this increases products purchased per customer and customer satisfaction.
+- Janitors clean the store - this increases customer satisfaction.
+- Cashiers check out customers - this increases products per customer very slightly (checklane candy and impulse buys).
+- Service desk attendants help customers - this increases customer satisfaction.
+
+- Another non-standard department is Receiving. The user can hire receivers.
+- Receivers increase the effectiveness of all department employee buffs.
+
+- Another non-standard department is Pricing and Inventory. The user can hire Pricing Employees and Inventory Crew Members.
+- Pricing employees can start sales in departments. They do this at the behest of the user, who instructs them to set a sale in a certain department for a certain percentage amount.
+- The user receives an amount of percentage points each day that they can divide amongst department for sales. Prestige upgrades increase the percentage points and how often the user receives them.
+- A prestige upgrade allows sales to be conducted automatically based on throughput.
+- Sales increase the share size of departments. Larger sales increase the share size by even more, but larger sales have diminishing returns.
+- No sale may exceed 99%.
+- Pricing employees also increase customer satisfaction by ensuring price integrity.
+- Inventory crew members improve department employee buffs.
+
+- Employees can be at a safety risk.
+- Employees who suffer accidents are removed from the store's staff.
+- Upgrades can be purchased that greatly improve safety.
+- If a user leaves because of an accident, the user is presented with a humorous message about what happened to them.

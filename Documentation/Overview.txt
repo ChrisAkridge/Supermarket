@@ -1,0 +1,110 @@
+# Supermarket
+
+"Supermarket" is an idea for an incremental game. The user plays as a store director who has been given control of a store. Customers come to the store and buy products, generating revenue that the user can use to buy more departments, level them up, and purchase upgrades.
+
+## Key Variables
+The rate of customers is determined by a number called the Customer Satisfaction (CS), which is expressed in the SI-prefixed unit "sat". User actions increase or decrease satisfaction, either by an amount or by increasing a multiplier. Customer satisfaction does not change on its own; it's always changed by user action.
+
+The store, through its customers purchases, receives a certain amount of revenue per second, which goes into the Bank. The Bank is used to buy and level up departments, hire and pay employees, prepare advertising, and more.
+
+## Departments
+The store has a certain amount of space which can accomodate various departments that sell products to customers. Departments receive a share of all customers flowing into the store, and each department has an "average product price" which is what each customer pays for each item. Customers will buy a certain number of products per customer per department. Both these variables can be changed by upgrades.
+
+The customer may only have one of a given department at a time. Instead, each department has a level it operates at. The user spends money to level up a department, and the amount to level up a department increases exponentially. Departments at a higher level get a higher share of the customers in the store.
+
+Some departments have a maximum level. If the user reaches the maximum level of a department, they can split the department into two or more sub-departments. (For instance, Electronics might split into Home Theater and Cell Phone Accessories, etc.). This forms a tree of departments. Departments at the bottom of the tree can be levelled up without bound.
+
+### Special Departments
+Some departments are considered "special". These departments do not directly contribute to revenue, but do unlock substantial increases in customer satisfaction and access to further upgrade trees. Special departments are, for example, Receiving or Inventory.
+
+## Employees
+The user can hire employees for departments. Employees take wages each second, whereas most other things to buy are one-time costs. The user can hire as many employees for a department as they wish, and each successive employee costs the same as the last employee.
+
+Employees improve some metric of the department or the store, such as average product price or customer satisfaction. These gains are subject to diminishing returns (i.e. the 20th employee will not add as much gain as the first).
+
+## Managers
+The user can hire managers. The user may only hire one manager per department per shift. Each manager draws wages, typically much more than an employee would. The user may hire any manager for any department.
+
+Different managers improve different metrics at different amounts and take different salaries. More powerful managers cost more and are unlocked later and later in the game. Old managers can be replaced with new, more effective managers.
+
+## Wage Negotiation
+Each 3 to 5 days of real-world time, all employees and managers will start negotiations for higher wages. During negotiations, all employee and managers will have their buffs reduced by 50%.
+
+Employees ask for a substantial increase in their wages, typically hundreds or thousands of times higher, depending on the ratio of the store's revenue per second to their wages. This is to keep employee's contributions at a reasonable price and not have their wages become completely irrelevant in the long term.
+
+If the user hasn't advanced much since the last negotiations, the employees will not start negotiations. This ensures that, if the user is progressing slowly, wages do not eat up their production. However, the user cannot do things to reduce their revenue to force negotiations to fail - if they start, they must complete.
+
+Negotiations may fail or succeed. The user can choose to capitulate immediately, giving the employees their requested wages. Otherwise, negotiations continue for 30 minutes up to 3 hours. They may fail or succeed by random chance; the more preceding negotiations that fail, the more likely the current one is to succeed, and the more money they'll ask for.
+
+Regardless of how the negotiations turn out, the user receives the 50% of employee buffs back at the end of negotiations. Employees do not quit or otherwise leave.
+
+## Safety
+Employees are at a safety risk. By default, employees have a small chance each second of suffering an injury that takes them out of the staff. If an employee has to quit, the user is notified of the losses with a humorous message.
+
+Several upgrades are available to greatly improve the employee's safety. These reduce the odds of an accident by a specified amount.
+
+## Sales
+
+One of the special departments the user can unlock is the Pricing and Inventory department. Employees hired for this department give the user the ability to start sales in departments. The more employees the user has, the more sales they can start (and the deeper the sales can be), but this, too, is subject to diminishing returns.
+
+Department sales reduce the revenue generated by a department but increase the department's "share size", which increases the flow of customers into that department without changing the flow of customers to other departments. Deeper sales give more customers.
+
+## Prestige
+
+As the user plays and makes incredible amounts of money, retail industry movers and shakers take notice and wish to work with the user. These people are called VIPs and serve as the basis of prestige levels and upgrades. Each VIP "costs" more than the last.
+
+The user can reset (called "promotion") - after purchase prestige upgrades, the user gets control of a new, larger store and keep their VIPs, which provide a boost to revenue for each VIP. Larger stores open more space for departments. VIPs contribute a +x% to the revenue.
+
+There are upgrades available after promotions. These upgrades can cost cash, VIPs (who, story-wise, are hired to maintain the upgrades), or both. One such upgrade is the Advertising department, which unlocks a series of powerful advertising-related upgrades.
+
+Prestige upgrades are bought between promotions. While buying upgrades, the user has access to all the cash in the bank of the last store they directed, but will start with nothing except their VIPs when they start at a new store.
+
+## Progression
+
+Gameplay is divided into multiple phases. A new phase starts when the user passes a certain number of VIPs. The stages are as follows:
+
+* Store Director
+
+The first phase of the game. The user is the Store Director for a store.
+
+* Market Director
+
+The second phase of the game. While the Store Director in the story has been promoted to manage all the stores in a market, the user will still only control one store at a time.
+
+* Regional Director
+
+The third phase of the game. More powerful prestige upgrades become more available.
+
+* Full Retail
+
+The fourth phase of the game. The user has become President of the entire corporation, owning all stores. The user still only controls and deals with the revenue of one, though. More managers become available, along with ever-more-powerful prestige upgrades.
+
+* Retail-Distribution
+
+The fifth phase of the game. The user can begin purchasing shipping and distribution companies outright, leading to large discounts for departments and some upgrades. Effectiveness of stockers also increases. Buying other businesses costs money as well as the wages for all employees, who will also negotiate as usual.
+
+* Supply Chain
+
+The sixth phase of the game. The user can now begin purchasing the companies that produce the goods shipped to the store. This unlocks even more powerful department discounts and more departments. All employees become slightly more effective when a universal discount becomes available to them in the story.
+
+* Science
+
+The seventh phase of the game. The user can purchase a facility specializing in teleportation and material synthesis. A series of upgrades improve various aspects of the supply chain, including teleporting products from the factory to the store, completely skipping the distribution chain.
+
+Eventually, the user unlocks Material Synthesis, which solves entropy and the laws of conservation, allowing the user's store to produce endless products at extremely low prices in house. Various effectiveness upgrades are also available. This is the last phase of the first half of the game, and a big moment in the story overall.
+
+* Ascended
+
+The eighth phase of the game. The user's character has passed away at an old age of natural causes. They ascend to heaven, along with all their VIPs. An angel commends them for their retail accomplishments and offers them a chance to return to mortal life as a new person with all their retail experience and their VIPs. Should the user decline this offer, the game is over, and the user receives a certificate and an option to restart.
+
+* Angel
+
+The ninth phase of the game. After the user reaches another VIP amount, the angel who gave them another chance inducts them into the ranks of the angels. Divine and heavenly upgrades become available, transcending even the material synthesizers. Some angels can now be hired as managers.
+
+* Archangel
+
+The tenth phase of the game. Any in-game clock now passes by much more quickly, and the user is reincarnated repeatedly, even in the same promotion phase. Once the user reaches the VIP requirement, they reach the rank of archangels. There is a council of archangels, each of whom can be hired to provide significant boosts to gameplay, but each archangel costs much, much, much more than the last.
+
+* God
+
+The eleventh phase of the game. The user has now become a deity. The most powerful game upgrades are available here. This phase is achieved when the VIPs are near the top end of the range of a double (10^308 or so). Once the user has achieved God, the next promotion will end the game for real.

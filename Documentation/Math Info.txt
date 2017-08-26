@@ -1,0 +1,46 @@
+Supermarket
+Mathematical Formulae and Information
+
+Key Variables:
+	- Customer Satisfaction
+		- Measured in "customer satisfaction units", or "sats".
+		- Use SI prefixes from yocto to yotta.
+		- After yotta is kiloyotta, megayotta, and so forth, to zetayotta.
+		- After zetayotta is yotta₂, then kiloyotta₂, then megayotta₂, and so forth.
+		- Goes up or down based on user action, but does not change automatically.
+	- Base Customers per Second (C/S):
+		- Determines the total number of customers visiting the store each second.
+		- At the beginning of the game, each nanosat contributes 1 customer per second.
+		- Upgrades can improve how much each nanosat gives in customers, called the customers per nanosat.
+			- Text: "Customer satisfaction brings in 10% more customers."
+	- Store Size:
+		- Starts at a certain amount, which is enough to hold key departments.
+		- Also has a size measure, which starts at 100% and goes up as the store size increases over promotions.
+			- For example, if the first store has an area of 10,000 square feet (100%), and the next has an area of 12,000 square feet, the new size measure is 120%.
+			- The customers per nanosat is multiplied by the size measure:
+				- For example, if the size measure is 120%, then the customers per nanosat is 1.2.
+	- Departments have the following key variables:
+		- Size: A constant number which represents the size of the department in square feet.
+		- Level: The level the department is at.
+		- Base price: The price of levelling a department from level 1 to level 2.
+		- Current price: The price of levelling the department up from its current level to its next.
+		- Multiplier: Every time the department is levelled up, its price is multiplied by this value.
+		- Share size: The amount of customers that a department receives per level.
+			- Share size is calculated by adding the levels of all departments together and dividing the C/S by this amount.
+				- Example: If there are 1,000,000 customers per second, and the sum of all department levels are 1,000, then the share size is 1,000 customers per second.
+		- Department C/S: A department's total customers per second is equal to the share size multiplied by the department's level.
+				- Example: If a department is at level 25, and the share size is 1,000 customers/second, the department receives 25,000 customers/second.
+		- Products per customer: The number of products a customer buys from the department (not necessarily an integer).
+		- Price per product: The price of each product bought by the customer.
+		- Revenue per second (R/S): Not stored, but calculated; the total amount of money made by a department in a second.
+			- Department R/S: (share size) * (department level) * (products per customer) * (price per product)
+		- Base Satisfaction per Level: How many sats are contributed by levelling up the department, ignoring the diminishing returns (see below).
+		- Satisfaction per Level: The actual amount of sats contributed by levelling up the department.
+			- Equal to (base satisfaction per level) * (1 / (standard deviation of all department levels))
+			- Serves as a method of keeping all departments at roughly the same level.
+			- The term (1 / (standard deviation of all department levels)) will be set to 1 if it is less than 1 (so a department never gives more than (base satisfaction per level) satisfaction).
+		- Employee Info:
+			- Number of Employees Working in Department: Fairly self-explanatory.
+			- Wage per Employee: The wage of each employee, expressed in dollars per second.
+			- Total Wages: All wages collected by employees of this department, equal to (number of employees * wage per employee)
+	
