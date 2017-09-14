@@ -204,14 +204,14 @@ A bankruptcy is a deeply undesirable thing. The store is liquidated and the user
 ### Upgrades
 Upgrades are one-time purchases that cost money from the bank. Upgrades typically improve a stated measure of gameplay, such as:
 
-	* Customer satisfaction, either by a given amount of sats or a percentage
-	* Customers per nanosat, products per customer, or price per product for one department, some departments, or all departments
-	* Customer and/or employee odds of an accident, typically by a factor of 10 or more
-	* The maximum discount or duration of sales
-	* Employee effectiveness
-	* Department and upgrade prices, such as a reduction by percentage or a change to the price calculation formula
-	* Boosts to VIP power or the rate at which they're attracted (see Promotions below).
-	* ...and more.
+* Customer satisfaction, either by a given amount of sats or a percentage
+* Customers per nanosat, products per customer, or price per product for one department, some departments, or all departments
+* Customer and/or employee odds of an accident, typically by a factor of 10 or more
+* The maximum discount or duration of sales
+* Employee effectiveness
+* Department and upgrade prices, such as a reduction by percentage or a change to the price calculation formula
+* Boosts to VIP power or the rate at which they're attracted (see Promotions below).
+* ...and more.
 
 Upgrades become visible to the user according to a certain condition, such as a total amount in the bank, or a department reaching a certain level. Once visible, upgrades remain visible even if the condition is no longer fulfilled.
 
@@ -259,10 +259,28 @@ At the bottom of the department tree of Seasonal, there are multiple departments
 | Christmas Cove                     | November 1 to December 25                  | 0.01                     | 15                   |
 
 ### Promotions
+Like most incremental games, Supermarket features the concept of prestige, where the user gains a currency they can utilize upon a reset to boost their production.
+
+After the user earns enough money, their retail prowess attracts an industry mover-and-shaker called a VIP. The next VIP "costs" more than the next, and so forth, along an polynomial curve.
+
+The user can put VIP to use at reset. When the user has at least 1 VIP, they can reset the game, which is called a Promotion. Each promotion opens a new store that the store director has been assigned to run, and all the VIPs then follow. Each VIP gives a `+x%` boost to the Customers per Sat metric, where `x` is a value that may be tweaked in the future, but should be around 1-2%.
+
+Each promotion forces the user to start over from nearly scratch. They keep any achievements, VIPs, and Promotion Upgrades (see below), but lose their departments, upgrades, and employees. They must start over, but they can use the VIP-boosted Customer per Sat to progress faster through the game.
 
 #### Store Size Increases
+The total size of each store increases upon each promotion. Initially, not all the departments could fit in the store, but as gameplay continues, more and more departments are able to fit.
+
+The store reaches a maximum size, just enough to hold all departments, when the user reaches a certain number of VIPs. Each promotion brings the user logarithmically to the maximum size. For example, if the store reaches maximum size at 10 trillion VIPs (10^13), then each power of 10 increase in the VIPs would bring the user 1/13th of the way to the maximum store size.
 
 #### Promotion Upgrades
+Between promotions, the user is given access to a set of prestige upgrades. These act mostly like normal upgrades, except they persist between promotions. Some cost money from the bank of the old store (which doesn't get any revenue while on the promotion upgrade menu), others cost VIPs, and some cost both.
+
+Promotion upgrades tend to be more powerful than normal upgrades.
+
+#### Lost VIPs
+Bankruptcies force an immediate promotion, even if there are 0 VIPs ready to be claimed. The total number of VIPs that would be gained through a promotion is halved, and the half that was lost are considered Lost VIPs. This means that the price of each VIP is the same as it would have been had the Lost VIPs been claimed.
+
+For example, if the user will gain 1,000,000 VIPs on a promotion, but only gains 500,000 VIPs after a bankruptcy promotion, the game still calculates the price of the next VIP based on the 1,000,000 VIPs that would have been claimed.
 
 ### Buying Businesses
 
