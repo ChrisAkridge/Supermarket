@@ -105,6 +105,7 @@ Thus, sales have the following key variables:
 * **Can Be Canceled At**: A timestamp which states when the sale can be cancelled by the user.
 
 **Table 1: Time of Day value for Sale Effectivess:**
+
 | Time of day                | Value |
 |----------------------------|-------|
 | Overnight (9:00pm-8:00am)  | 0.6   |
@@ -113,6 +114,7 @@ Thus, sales have the following key variables:
 | Evening (7:00pm-9:00pm)    | 0.8   |
 
 **Table 2: Time of Year value for Sale Effectivess:**
+
 | Time of year                        | Value |
 |-------------------------------------|-------|
 | Winter (December 26 to March 1)     | 0.9   |
@@ -152,18 +154,109 @@ Given L as the level of this department, the following equations calculate maxim
 Where `smoothstep(x) = x * x * (3 - 2 * x)`.
 
 ### Employees
+Each department can hire employees to help run it. Each department has a one or more *roles*, such as Stocker, Customer Assistant, or Desk Attendant. Each hired employee provides a boost to a given stat, such as customer satisfaction, price per product, or products per customer.
 
-#### Employee Safety
+Each employee costs a certain amount in wages, calculated as a certain number of dollars per second. **Wages do not increase for each hired employee;** each subsequent employee costs as much to hire as the previous one. However, wages do increase over time; see Wage Negotiations below. Whereas buying most things reduces the bank, hiring employees reduces the profit per second.
+
+The user may hire as many employees as he can afford, and each employee provides the same boost. Some employees may not be active at certain times - for example, they may be training. **Note that there is no concept of shifts or scheduling; all employees will be working at all times unless otherwise inactive.** Each department keeps track of the number of inactive employees and reduces their boosts accordingly.
+
+#### Employee and Customer Safety
+Employees are at risk of accidents. This risk is expressed as an odds-per-second that an employee will suffer an accident. This number is fairly low by default, meaning that accidents in stores with only a few dozen team members are rather rare. However, as the user hires more employees, more of them will suffer accidents.
+
+Any employee who suffers an accident will always be forced to quit. This occurs automatically, but the user is notified of the loss of the employee with a humorous message. If the user loses multiple employees over an idle period (for example, the browser being closed), a single humorous message will be displayed for all the lost employees.
+
+Additionally, customers can experience accidents in the store and incidents relating to the products they buy, such as food poisoning. Customers have two odds-per-second measures, one for accidents in the store (such as falls, slips, or injuries inflicted by careless employees), and one for incidents from the products they buy (such as food poisoning, or acid burns from defective batteries). The former class of accidents occur more commonly than the latter. Accidents reduce customer satisfaction by a small percentage, but incidents reduce customer satisfaction by a larger percentage.
+
+Several upgrades are available that increase the safety of both employees and customers. Each upgrade is usuallly a large reduction in the odds of an accident, such as a 10x or 20x reduction in odds. Some upgrades only improve employee safety, some only improve customer safety, and some improve both. Any upgrade that reduces the odds of a customer accident will reduce both odds (accident and incident) by the same amount.
 
 ### Managers
+Each department has at least one slot for a manager. A manager is a special employee who costs more in wages but provides more boosts to stats. The user can select managers from a pool of available managers, which displays each manager's wages and their boosts. Users can only assign as many managers to a department as their are slots, but can move and remove managers from departments at will.
+
+Managers do not suffer accidents and are not affected by safety upgrades. They are also always active.
+
+#### Hiring Assistants
+After some gameplay, the user will have to manage hiring for many different departments. In order to simplify this, the user may hire a Hiring Assistant Manager that unlocks a menu with buttons that allow the user to hire 1, 10, or 100 employees to every role in every department. This will increase the wages accordingly, but will immediately provide the employee boosts. **If hiring that many employees will increases the wages above the revenue, the hiring button will be red.**
+
+The user also has buttons to lay off 1, 10, or 100 employees to every role in every department. If there are less employees in a given role than the button laid off, all employees of that role will be laid off. This reduces wages.
 
 ### Wage Negotiations
+Since employee wages increase linearly, but progress increases exponentially, the user will eventually reach a point where they can hire millions or billions of employees and enjoy tremendous boosts. In order to keep wages a non-trivial share of the total revenue of the store, the employees will begin wage negotiations regularly.
+
+Wage negotiations may start at any point, but tend to start about every 3 to 5 days of real-world time. **During negotiations, all employees and managers will have their boosts reduced by 50%.** The wages they negotiate for will be about 20% to 30% of the revenue per second *as recorded at the start of negotiations*, to avoid the user reducing their revenue to reduce the amount they asked for. Depending on how much growth the user has had in the last few days, this could be an increase of hundreds or thousands of times.
+
+**Wage negotiations will not start if 20%-30% of the revenue at the stary of negotiations is less than their current wages, or if the user hasn't progressed more than a given percentage in revenue since the last negotiations.**
+
+Negotiations take anywhere from 30 minutes to 3 hours of real-world time. The user can immediately choose to accept the increase, thereby ending the negotiations and restoring the lost 50% to boosts, or they can wait it out. Negotiations may fail or succeed on their own randomly, but the more previous consecutive fails, the more likely this negotiation will succeed. Multiple failed negotiations also add +2% to the wages asked for at each new negotiation, capped at 50% of revenue per second.
+
+If negotiations fail, employees return to work and restore the lost 50% to boosts; they do not quit or walk out. If negotiations succeed, they still return to work, this time with higher wages.
+
+#### Mass Hiring Negotiation
+If the user hires a bunch of employees within 1 hour, wage negotiations start immediately. This is to prevent the user from hiring billions of cheap employees for insane boosts. These special negotiations will complete within 3 to 5 minutes, and ask for 30% to 40% of the current revenue in wages. They are 10x more likely to succeed.
+
+#### Automatic Layoffs
+If the total wages of all employees is more than the revenue per second for a period of 15 minutes, an automatic layoff occurs to prevent the store from going bankrupt. The most expensive employees are laid off first, followed by less expensive employees. Layoffs stop as soon as wages dip back below revenue. Layoffs are atomic - all employees who will be laid off are laid off at once. The user is notified of the layoff with a message.
+
+##### Bankruptcy
+Ordinarily, the user cannot buy anything (department levels or upgrades) that would put their bank in the red. However, employee wages per second can exceed revenue per second for 15 minutes before automatic layoffs occur. With a low enough bank, it is possible to cause a bankruptcy, which occurs as soon as the total in the bank drops below zero.
+
+A bankruptcy is a deeply undesirable thing. The store is liquidated and the user is forced to be promoted (see Promotions below). They gain only 50% of the VIPs they would have gained through a normal promotion and customer satisfaction suffers a permanent -1%.
 
 ### Upgrades
+Upgrades are one-time purchases that cost money from the bank. Upgrades typically improve a stated measure of gameplay, such as:
+
+	* Customer satisfaction, either by a given amount of sats or a percentage
+	* Customers per nanosat, products per customer, or price per product for one department, some departments, or all departments
+	* Customer and/or employee odds of an accident, typically by a factor of 10 or more
+	* The maximum discount or duration of sales
+	* Employee effectiveness
+	* Department and upgrade prices, such as a reduction by percentage or a change to the price calculation formula
+	* Boosts to VIP power or the rate at which they're attracted (see Promotions below).
+	* ...and more.
+
+Upgrades become visible to the user according to a certain condition, such as a total amount in the bank, or a department reaching a certain level. Once visible, upgrades remain visible even if the condition is no longer fulfilled.
+
+Upgrades are bought using cash from the bank. The user can only buy upgrades which they can afford. Upgrades immediately provide their benefits.
 
 ### Time of Day and Year Effects
+Real retail stores are busier at certain times of day and certain times of the year. The stores in Supermarket are the same. The total customers per sat is multiplied by two numbers from the tables below, based on time of day and year:
+
+| Time of day                   | Multiplier |
+|-------------------------------|------------|
+| Morning (8:00am to 12:00pm)   | 0.95       |
+| Lunch (12:00pm to 2:00pm)     | 1.1        |
+| Afternoon (2:00pm to 5:00pm)  | 1          |
+| Drive Time (5:00pm to 7:00pm) | 1.25       |
+| Evening (7:00pm to 10:00pm)   | 1          |
+| Overnight (10:00pm to 8:00am) | 0.85       |
+
+| Time of year                                          | Multiplier |
+|-------------------------------------------------------|------------|
+| Winter (January 1 to February 28/29)                  | 0.99       |
+| Spring (March 1 to April 30)                          | 1          |
+| Gardening Season (May 1 to May 31)                    | 1.05       |
+| Summer (June 1 to August 31)                          | 1          |
+| Fall (October 1 to the Wednesday before Thanksgiving) | 1          |
+| Holiday Shopping Season (Thanksgiving to Christmas)   | 1.5        |
+| Post-Holidays (December 26 to December 31)            | 1.0001     |
+
+The time used is the current system time and time zone. At each launch, if a network connection is available, the game checks the real current time against the system time, and if there's a large discrepancy (more than 1 minute either way), the user is chided, but the effect still takes place. The time check also occurs if a large (30 second or more) timeskip is detected. If no network connection is available, the time check does not occur.
+
+The time of day multiplier changes in the first second of the time period. For instance, Drive Time starts at exactly 5:00:00pm each day. The time of year multiplier changes at midnight on the first day in the period and lasts until 11:59:59pm on the last day in the period.
+
+From the tables, the most productive time is Drive Time during the holidays, leading to a multiplier of 1.875. The worst time is Overnight during Winter, leading to a multiplier of 0.8415.
 
 #### On the Seasonal Departments
+At the bottom of the department tree of Seasonal, there are multiple departments that serve items from a specific season year-round. These items don't sell very well while out of season, but enjoy huge boosts while in season. The share size multiplier for each department is taken from the table below. This multiplier is applied to the share size of the department while not affecting the share sizes in any other department.
+
+| Department Name                    | In Season                                  | Out-of-Season Multiplier | In-Season Multiplier |
+|------------------------------------|--------------------------------------------|--------------------------|----------------------|
+| Health and Wellness                | December 26 to January 13                  | 0.1                      | 1                    |
+| Valentine's Center                 | January 14 to February 14                  | 0.4                      | 2.5                  |
+| Easter Lane and Spring Garden      | February 15 to the day before Memorial Day | 0.125                    | 1.85                 |
+| Summer Furniture and Pool Supplies | Memorial Day to July 13                    | 0.1                      | 2                    |
+| Back to School                     | July 14 to September 7                     | 0.35                     | 2.25                 |
+| Halloween Street                   | September 8 to October 31                  | 0.4                      | 3                    |
+| Christmas Cove                     | November 1 to December 25                  | 0.01                     | 15                   |
 
 ### Promotions
 
@@ -202,3 +295,5 @@ Where `smoothstep(x) = x * x * (3 - 2 * x)`.
 #### Archangel
 
 #### God
+
+### Tracks
