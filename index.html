@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Supermarket</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<meta charset="utf-8" />
+	</head>
+
+	<body>
+		<!-- SAMPLE Department INFO PANEL -->
+		<h1>Department Info Panel Example</h1>
+		<div class="department-panel dept-level-0">
+			<div class="top-info rounded-top">
+				<div class="dept-name"><span>Friendly Name</span></div>
+				<div class="dept-level"><span>Level 12</span></div>
+			</div>
+			<div class="bottom-info rounded-bottom">
+				<div class="dept-info">
+					<p class="dept-info-item"><strong>140,858</strong> customers per second</p>
+					<p class="dept-info-item"><strong>$492,241</strong> per second</p>
+				</div>
+				<div class="dept-buttons">
+					<div class="dept-button dept-info-button">Ⓘ</div>
+					<div class="dept-button dept-level-button">⇪ Level Up ($29,741,846)</div>
+				</div>
+			</div>
+		</div>
+		<div class="department-panel dept-level-1">
+			<div class="top-info rounded-top">
+				<div class="dept-name"><span>Friendly Name</span></div>
+				<div class="dept-level"><span>Level 296</span></div>
+			</div>
+			<div class="bottom-info rounded-bottom">
+				<div class="dept-info">
+					<p class="dept-info-item big-num"><strong>897.243 quattuorquadragintillion</strong> customers per second</p>
+					<p class="dept-info-item big-num"><strong>$1.246 quinquadragintillion</strong> per second</p>
+				</div>
+				<div class="dept-buttons">
+					<div class="dept-button dept-info-button">Ⓘ</div>
+					<div class="dept-button dept-level-button big-num">⇪ Level Up ($89.623 quinquadragintillion)</div>
+				</div>
+			</div>
+		</div>
+
+		<h1>Department In-Depth Info Example</h1>
+		<div class="department-panel">
+			<div class="top-info rounded-top">
+				<div class="dept-name">Friendly Name</div>
+				<div class="dept-level">Level 285</div>
+			</div>
+			<div class="bottom-info">
+				<p class="dept-info-item"><strong>285</strong> shares at <strong>1,600,246</strong> customers per share (<strong>1x</strong> Multiplier)</p>
+				<p class="dept-info-item">Each customer buys <strong>4.62</strong> products</p>
+				<p class="dept-info-item"><strong>456,070,110</strong> customers per second</p>
+				<p class="dept-info-item">Each product worth <strong>$7.62</strong></p>
+				<p class="dept-info-item">Revenue per second: <strong>$16.056 billion</strong></p>
+				<p class="dept-info-item">Total revenue: <strong>$1.235 trillion</strong></p>
+				<div class="progress-container">
+					<div class="start-level">0</div>
+					<div class="progress-bar">
+						<div id="dept-0-progress">
+							<!-- ID, CSS set by JS -->
+						</div>
+					</div>
+					<div class="end-level">500</div>
+				</div>
+				<div class="dept-button dept-level-big-button">
+					<div class="level-arrow">⇪</div>
+					<div class="button-text">
+						<div class="center-text">Level Up</div>
+						<div class="center-text">$29.224 trillion • Up to 897.24 kilosats</div>
+					</div>
+				</div>
+			</div>
+			<div class="dept-info-tabs">
+				<div class="dept-info-tab selected-tab">Employees</div>
+				<div class="dept-info-tab">Managers</div>
+				<div class="dept-info-tab">Sales</div>
+			</div>
+			<div class="dept-employee-info rounded-bottom">
+				<p class="dept-info-item"><strong>246</strong> employees at <strong>$97.246</strong>/second</p>
+				<div class="role-list">
+					<div class="role">
+						<span class="role-name">Role I</span>
+						<div class="role-options">
+							<div class="dept-role-info">
+								<p class="dept-info-item"><strong>897</strong> employees hired</p>
+								<p class="dept-info-item"><strong>+25 millisats</strong> per employee</p>
+								<p class="dept-info-item"><strong>22.425 sats</strong> from all employees</p>
+								<p class="dept-info-item">Cost: <strong>$8.45</strong>/second</p>
+							</div>
+							<div class="hiring-buttons">
+								<div class="hire-buttons">
+									<div class="hire hire-one">+1</div>
+									<div class="hire hire-ten">+10</div>
+									<div class="hire hire-hundred">+100</div>
+								</div>
+								<div class="fire-buttons">
+									<div class="fire fire-one">-1</div>
+									<div class="fire fire-ten">-10</div>
+									<div class="fire fire-hundred">-100</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h1>Manager Tab</h1>
+		<div class="dept-manager-info rounded-bottom">
+			<div class="manager-instructions">
+				Click a slot to assign a manager to it. Different managers give different boosts!
+			</div>
+			<div class="manager-slot manager-assigned">
+				<div class="manager-row">
+					<div class="manager-portrait" id="portrait-0"></div>
+					<div class="manager-info">
+						<p class="dept-info-item"><strong>+1%</strong> Customer Satisfaction</p>
+						<p class="dept-info-item">Cost: <strong>$45,000</strong>/second</p>
+					</div>
+				</div>
+				<div class="manager-name rounded-bottom">John McRetail</div>
+			</div>
+			<div class="manager-slot manager-unassigned">
+				<div class="manager-row">
+					<div class="manager-portrait" id="portrait-1"></div>
+					<div class="manager-info">
+						Click this slot to assign a manager!
+					</div>
+				</div>
+				<div class="manager-name rounded-bottom">Unassigned</div>
+			</div>
+		</div>
+
+		<h1>Sales Tab</h1>
+		<h2>No Sale Active</h2>
+		<div class="dept-sale-info rounded-bottom">
+			<h3 class="sale-header">Start a Sale!</h3>
+			<div class="sale-form">
+				<div class="sale-duration-form">
+					<label for="sale-duration">Duration</label>
+					<input type="number" id="sale-duration" name="saleDuration" min="1" max="7" value="1" /><span>days</span>
+					<p class="sale-input-info">(up to 7 days)</p>
+				</div>
+				<div class="sale-discount-form">
+					<label for="sale-discount">Discount:</label>
+					<input type="number" id="sale-discount" name="saleDiscount" min="1" max="20" value="1" /><span>%</span>
+					<p class="sale-discount-info">(up to 20%)</p>
+				</div>
+			</div>
+			<a class="sale-start">Start Sale!</a>
+		</div>
+
+		<h2>Can't Start a Sale Now</h2>
+		<div class="dept-sale-inactive-info rounded-bottom">
+			<h3 class="sale-wait-info">Sorry, you can't start a sale right now. The next sale can be started in <strong>12:36:23</strong>.</h3>
+		</div>
+
+		<h2>Sale Active</h2>
+		<div class="dept-sale-active-info rounded-bottom">
+			<h3>Sale Active!</h3>
+			<p class="dept-info-item">Discount: <strong>20% off</strong></p>
+			<p class="dept-info-item">Remaining Time: <strong>6 days 11:40:05</strong></p>
+			<p class="dept-info-item">Additional Customers per Second: <strong>147.285</strong></p>
+			<p class="dept-info-item">Profit: <strong>$8.96/second</strong></p>
+			<div class="sale-cancel-container">
+				<a class="sale-cancel">Cancel Sale in <strong>17:52</strong></a>
+			</div>
+		</div>
+	</body>
+
+</html>

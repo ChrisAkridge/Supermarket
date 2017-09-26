@@ -1,0 +1,335 @@
+/* ==== Universal Styling ==== */
+
+* {
+	font-family: Calibri;
+	box-sizing: border-box;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.rounded-top {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.rounded-bottom {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.big-num {
+	font-size: 80%;
+}
+
+/* ==== Small Department Panel ==== */
+
+.department-panel {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	margin-bottom: 25px;
+}
+
+.dept-level-1 {
+	margin-left: 10px;
+}
+
+.top-info {
+	display: flex;
+	justify-content: space-between;
+	background: linear-gradient(90deg, #95B2FC 20%, rgb(226, 226, 226));
+	border: 1px solid black;
+	color: black;
+}
+
+.dept-name {
+	padding-left: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.dept-level {
+	padding-right: 10px;
+}
+
+.bottom-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: rgb(252, 252, 191);
+	border: 1px solid black;
+}
+
+.dept-info {
+	margin: 20px 0 10px 10px;
+}
+
+.dept-info-item {
+	margin: 0;
+}
+
+.dept-info-item::before {
+	content: "• ";
+}
+
+.dept-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.dept-button {
+	cursor: pointer;
+	margin: 0 5px 5px 0;
+	padding: 10px;
+	background-color: #004C8B;
+	color: white;
+	border-radius: 10px;
+}
+
+/* ==== Large Department Panel ==== */
+
+.dept-level-big-button {
+	margin: 0 auto 10px auto;
+	display: flex;
+}
+
+.level-arrow {
+	font-size: 200%;
+	width: 35px;
+}
+
+.button-text {
+	display: inline-block;
+}
+
+.progress-container {
+	display: flex;
+	justify-content: space-around;
+	margin: 10px 0 10px 0;
+}
+
+.progress-bar {
+	width: 80%;
+	height: 20px;
+	border: 1px solid black;
+}
+
+#dept-0-progress {
+	/* This is calculated by the JS */
+	height: 18px;
+	padding-top: 1px;
+	background-color: green;
+	width: 158px;
+	border-right: 1px solid black;
+}
+
+.dept-info-tabs {
+	display: flex;
+	border: 1px solid black;
+}
+
+.dept-info-tab {
+	flex-grow: 1;
+	flex-basis: 0;
+	text-align: center;
+	font-size: 150%;
+}
+
+.dept-info-tab:not(:last-child) {
+	border-right: 1px solid black;
+}
+
+.selected-tab {
+	background-color: #333333;
+	color: white;
+}
+
+/* ==== Employee Tab Panel ==== */
+
+.dept-employee-info {
+	padding: 10px;
+	background-color: #B2D7F8
+}
+
+.role {
+	padding-top: 10px;
+	padding-left: 5px;
+	border: 1px solid black;
+}
+
+.role-name {
+	font-size: 125%;
+}
+
+.role-options {
+	padding-left: 5px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.hiring-buttons {
+	display: flex;
+}
+
+.hire {
+	padding: 5px 5px;
+	text-align: center;
+	font-weight: bold;
+	border: 1px solid #005700;
+	background-color: green;
+	color: white;
+	cursor: pointer;
+}
+
+.fire {
+	padding: 5px 5px;
+	text-align: center;
+	font-weight: bold;
+	border: 1px solid #570000;
+	background-color: red;
+	color: white;
+	cursor: pointer;
+}
+
+/* ==== Manager Info Tab ==== */
+.dept-manager-info {
+	background-color: #A2E2A2;
+	width: 348px;	/* just a hack here since the manager tab isn't a child of the department pane */
+}
+
+.manager-instructions {
+	font-size: 110%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.manager-slot {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.manager-row {
+	display: flex;
+	border: 1px solid black;
+}
+
+.manager-info {
+	padding: 5px 0 0 5px;
+}
+
+/* ASSIGNED BY JAVASCRIPT */
+.manager-portrait {
+	height: 75px;
+	width: 75px;
+	border: 1px solid black;
+	background-size: cover;
+}
+
+#portrait-0 {
+	background-image: url(https://www.reinvestment.com/wp-content/uploads/2015/12/shopping-aisle-c-town-supermarket-pa.jpg);
+}
+
+#portrait-1 {
+	background-image: url(https://image.freepik.com/free-icon/question-mark_318-62253.jpg);
+}
+
+.manager-name {
+	background-color: #547A54;
+	width: 140px;
+	color: white;
+	text-align: center;
+	margin-left: 10px;
+}
+
+/* ==== Sale Info Tab (no sale active) ==== */
+.dept-sale-info {
+	width: 348px; /* same hack here, just for this mockup */
+	border: 1px solid black;
+	background-color: #FFB4B4;
+}
+
+.sale-header {
+	text-align: center;
+	margin: 10px 0;
+	font-weight: normal;
+	font-size: 125%;
+}
+
+.sale-form {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 15px;
+}
+
+.sale-duration-form>p {
+	margin: 0 0 0 5px;
+	font-size: 85%;
+}
+
+.sale-discount-form>p {
+	margin: 0 0 0 5px;
+	font-size: 85%;
+}
+
+.sale-start {
+	display: block;
+	width: 40%;
+	margin: 0 auto 10px auto;
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+	color: white;
+	background-color: #004B4B;
+}
+
+/* ==== Sale Info Tab (can't start a sale now) ==== */
+.dept-sale-inactive-info {
+	width: 348px;
+	border: 1px solid black;
+	background-color: #FFB4B4;
+}
+
+.sale-wait-info {
+	margin: 10px;
+	font-weight: normal;
+}
+
+/* ==== Sale Info Tab (can't start a sale now) ==== */
+.dept-sale-active-info {
+	width: 348px;
+	border: 1px solid black;
+	background-color: #FFB4B4;
+}
+
+.dept-sale-active-info>h3 {
+	text-align: center;
+	margin: 10px 0;
+}
+
+.dept-sale-active-info>.dept-info-item {
+	margin-left: 10px;
+}
+
+.sale-cancel-container {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.sale-cancel {
+	display: block;
+	text-align: right;
+	margin: 10px 10px 10px 0;
+	padding: 10px;
+	background-color: red;
+	color: white;
+	user-select: none;
+	cursor: pointer;
+}

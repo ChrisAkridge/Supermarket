@@ -182,7 +182,7 @@ The user also has buttons to lay off 1, 10, or 100 employees to every role in ev
 ### Wage Negotiations
 Since employee wages increase linearly, but progress increases exponentially, the user will eventually reach a point where they can hire millions or billions of employees and enjoy tremendous boosts. In order to keep wages a non-trivial share of the total revenue of the store, the employees will begin wage negotiations regularly.
 
-Wage negotiations may start at any point, but tend to start about every 3 to 5 days of real-world time. **During negotiations, all employees and managers will have their boosts reduced by 50%.** The wages they negotiate for will be about 20% to 30% of the revenue per second *as recorded at the start of negotiations*, to avoid the user reducing their revenue to reduce the amount they asked for. Depending on how much growth the user has had in the last few days, this could be an increase of hundreds or thousands of times.
+Wage negotiations may start at any point, but tend to start about every 3 to 5 days of real-world time. **During negotiations, all employees and managers will have their boosts reduced by 50%.** **The wage negotiation timer does not reset upon promotion (see Promotions below).** The wages they negotiate for will be about 20% to 30% of the revenue per second *as recorded at the start of negotiations*, to avoid the user reducing their revenue to reduce the amount they asked for. Depending on how much growth the user has had in the last few days, this could be an increase of hundreds or thousands of times.
 
 **Wage negotiations will not start if 20%-30% of the revenue at the stary of negotiations is less than their current wages, or if the user hasn't progressed more than a given percentage in revenue since the last negotiations.**
 
@@ -283,35 +283,60 @@ Bankruptcies force an immediate promotion, even if there are 0 VIPs ready to be 
 For example, if the user will gain 1,000,000 VIPs on a promotion, but only gains 500,000 VIPs after a bankruptcy promotion, the game still calculates the price of the next VIP based on the 1,000,000 VIPs that would have been claimed.
 
 ### Buying Businesses
+As the user is promoted, they gain more and more control of the retail chain they work for (see Progression below), and can eventually buy distributors, manufacturers, and scientific researcher companies. These businesses will appear as standard upgrades that, when purchased, reduce costs across the board and unlock a series of new, powerful upgrades that greatly increase production rate. While the retail chain employing the user owns these businesses, the user does not directly manage them.
+
+As noted in Progression, as the store becomes more wealthy, it has the power to buy larger businesses.
 
 #### Distributors
+Distributors are businesses that transport freight from manufacturers to stores, and they're the first that can be bought. While the store always has its own supply chain made of Distribution Facilities (DFs), the distributors are companies similar to UPS or FedEx; they supply the stores with freight that the DFs do not pick up on their own.
 
-#### Production Companies
+#### Manufacturers
+Manufacturers are the companies which manufacture the products that are sent to the stores. While most stores have their own brand, buying Manufacturers in Supermarket literally entails buying the entire production chain, from base materials to the checkout lane. Buying Manufacturers means that the retail chain runs entirely on things it owns. Manufacturers are far more expensive to buy than just Distributors.
 
-#### Scientific Researchers
+#### Scientific Research Companies
+As the story progresses, and the user has reached the top of the retail world, they can branch into buying scientific research companies who will then research advanced upgrades to the retail environment. They start by making small but useful improvements to the supply chain, such as drone-delivered packages, and then take a turn into the absurd, such as padded flooring to reduce fall accidents, magnetic cart attractors to herd carts from the lot, and even Material Synthesis which converts an advanced fluid into any and all parts or products of the retail chain.
+
+Eventually, the science companies even manage to break the laws of conservation, leading to free energy and free matter, which immensely reduces costs.
 
 ### Progression
+Listed in the headings below are a series of stages of gameplay. Each stage is achieved when the user passes a certain number of VIPs and then is promoted to another store. Each stage unlocks new standard upgrades and new abilities.
+
+**Please note that, even though the character in the game becomes the manager of many stores, the user will only ever control one at a time.**
 
 #### Store Director
+This is the first phase of the game. The user plays as a Store Director for a given store. They unlock and level departments, buy upgrades, and hire employees and managers to earn revenue and attract VIPs.
 
 #### Market Director
+This is the second phase of the game. The Store Director character has been promoted to direct all the stores in a market, typically between 4 and 7 stores. The only real change is a set of one-time loans from other stores in the market equal to some small percent of the revenue earned this promotion. This can be useful for saving up for a large purchase.
 
 #### Regional Director
+The user now manages all the stores in a single geographic region. The "store loan" upgrades mentioned above are now more powerful, but are still one-time-use only. A set of promotion upgrades for advertising become available.
 
 #### Full Retail
+The user is now President of the entire corporation. A set of more powerful, more expensive managers are added to the pool, along with even more powerful promotion upgrades.
 
 #### Retail-Distribution
+The user can now purchase Distributor companies at large costs.
 
 #### Supply Chain
+The user can now purchase Manufacturer companies at even larger costs. All employees gain a small boost because of the addition of a universal employee discount.
 
 #### Science
+The user can now purchase Scientific Research Companies at immense costs. A series of technologically unlikely upgrades become available.
 
 #### Ascended
+The character has passed away from old age. They ascend to heaven, along with all of their VIPs and the bank from the last store they managed while alive. An angel commends the character for their retail accomplishments and offers them reincarnation with their retail experience and VIPs.
+
+The user can accept this offer, unlocking more upgrades and content. They may also turn down this offer, in which case the game completes. The user receives a certificate, a textbox containing the save code in case they wish to continue in the future, and a button to restart from nothing.
 
 #### Angel
+The character passes away again. They meet the same angel, who commends them again on being such a retail mogul. The angel then inducts the character into the ranks of the angels. Divine and heavenly promotion upgrades more powerful than even Material Synthesizers are unlocked, and some angels appear as new managers in the pool.
 
 #### Archangel
+By this point, any in-game clock now passes far more quickly. The character has died and been reincarnated many times, even in the same promotion. The character has now become an Archangel, a very high ranking. They join the Council of Archangels, who appear in the manager pool as insanely powerful managers.
 
 #### God
+After enough promotions, the character becomes a deity of retail. The most powerful upgrades are available here. Upon the next promotion, the game ends once more, and the user receives another certificate, the save code for the game, a reset button, and a continue button. The continue button warns that there are no further upgrades available at this time and that the user has truly completed the game.
 
 ### Tracks
+A track is a sort of minigame that is unlocked when the user reaches a certain amount of revenue-earned-all-time.
