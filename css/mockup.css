@@ -1,0 +1,90 @@
+/* ==== Universal ==== */
+body {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Calibri, sans-serif;
+}
+
+header {
+	display: flex;
+	background-color: #005AC0;
+	color: white;
+	border-bottom: 1px solid black;
+}
+
+/* ==== Header ==== */
+
+header div {
+	padding: 0 20px;
+}
+
+header a {
+	color: white;
+}
+
+#game-logo {
+	border-right: 1px solid black;
+}
+
+#game-logo h1 {
+	margin: 8px;
+}
+
+#welcome-panel {
+	align-self: stretch;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-right: 1px solid black;
+}
+
+#welcome-panel p {
+	margin: 0;
+}
+
+#hello {
+	font-size: 125%;
+}
+
+#username {
+	font-weight: bold;
+}
+
+#welcome-info {
+	font-size: 110%;
+}
+
+#menu {
+	align-self: center;
+	display: flex;
+	align-items: flex-start;
+	font-size: 125%;
+}
+
+.menu-separator {
+	margin: 0 10px;
+}
+
+.self-center {
+	align-self: center;
+}
+
+#promotion-link p {
+	margin: 0;
+}
+
+#promotion-link {
+	text-decoration: none;
+	background-color: #5283B8;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+#new-vips {
+	font-size: 80%;
+}
+
+#promote-text {
+	text-align: center;
+}

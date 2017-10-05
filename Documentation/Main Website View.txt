@@ -1,0 +1,40 @@
+Supermarket Main Website View:
+
+- Three panels (left, center, and right) with a top header
+
+Header:
+	- Top header displays supermarket "logo" (which is some text that can be changed by the user) on the left, followed by the name of the store director (a link which the user can click to change).
+	- Beneath the store director's name is the current in-game time, updated once every ten seconds. Displays date and time down to the minute.
+	- Next to the time is a weather report, updated once per hour, generated randomly based on the season of the in-game clock.
+	- On the far right of the header is a list of links "Save | Settings | <Promotions>" where the first two are just links and the last one is a large button that has the number of VIPs to claim above the "Promotion" text.
+
+Left Panel:
+	- Displays the list of department panels
+	- Is a scrollable container
+
+Center Panel:
+	- Displays general store info
+	- Bank is centered at the top with big numbers
+	- Customer satisfaction and revenue per second displayed in smaller text below bank
+	- Horizontal rule separates next section
+	- Section two has overall information about the store, including:
+		- Customers per second (accounting for sales)
+		- Products sold per second
+		- Number of departments unlocked and the sum of their levels
+		- Available and occupied space in the store
+		- Effects of time and day of year on busyness
+	- Section three has employee and manager information, including:
+		- Number of employees and managers hired, the sum of their wages and the percentage of wages of total revenue
+		- Number of manager slots assigned versus available
+		- Customer/employee safety information, including:
+			- Accidents in the last 24 hours
+			- Reports about each accident in the last 24 hours if there are three or less
+			- Reports about all accidents in the last 24 hours if there are more than three
+		- Hiring assistant buttons, if the upgrade is purchased
+	- Section four has VIP information, available after the first promotion:
+		- Number of VIPs attracted, plus their boosts
+		- Lost VIPs, if any
+		
+Right Panel:
+	- Divided into a small top panel for messages and a large bottom panel with tabs.
+	- The message panel displays the latest "message"
