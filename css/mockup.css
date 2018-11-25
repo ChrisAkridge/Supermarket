@@ -1,18 +1,23 @@
 /* ==== Universal ==== */
+html, body {
+	height: 100%;
+}
+
 body {
 	margin: 0;
 	box-sizing: border-box;
 	font-family: Calibri, sans-serif;
+	display: flex;
+	flex-direction: column;
 }
 
+/* ==== Header ==== */
 header {
 	display: flex;
 	background-color: #005AC0;
 	color: white;
 	border-bottom: 1px solid black;
 }
-
-/* ==== Header ==== */
 
 header div {
 	padding: 0 20px;
@@ -87,4 +92,60 @@ header a {
 
 #promote-text {
 	text-align: center;
+}
+
+/* ==== Main Container ==== */
+#main-container {
+	display: flex;
+	flex: 1;
+}
+
+#dept-tree {
+	width: 25%;
+	border-right: 1px solid black;
+	overflow-y: auto;
+}
+
+#main-panel {
+	width: 50%;
+	border-right: 1px solid black;
+	overflow-y: auto;
+}
+
+#upgrades-panel {
+	width: 25%;
+	overflow-y: auto;
+}
+
+/* ==== Main Panel ==== */
+.main-separator {
+	width: 95%;
+	margin: 10px 2.5% 10px 2.5%;
+	height: 1px;
+	border-top: 1px solid black;
+}
+
+#bank {
+	text-align: center;
+	font-size: 3rem;
+	margin: 0;
+}
+
+#sat-revenue {
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+#main-panel ul {
+	list-style: none;
+}
+
+#secondary-info-list {
+	padding-left: 1rem;
+	font-size: 1.25rem;
+}
+
+#employee-info-list {
+	padding-left: 1rem;
+	font-size: 1.25rem;
 }

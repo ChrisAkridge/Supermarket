@@ -34,6 +34,8 @@ Center Panel:
 	- Section four has VIP information, available after the first promotion:
 		- Number of VIPs attracted, plus their boosts
 		- Lost VIPs, if any
+	- Section five has buttons to level up all departments our hire employees for all departments
+		- The x1, x10, x50, and x100 buttons all round up to the nearest multiple
 		
 Right Panel:
 	- Divided into a small top panel for messages and a large bottom panel with tabs.
