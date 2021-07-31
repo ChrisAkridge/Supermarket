@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Supermarket Demo</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <div class="stats">
+            <div id="bank">$100.00</div>
+            <div id="customers-per-second">0 customers/second</div>
+            <div id="products-per-customer">0 products/customer</div>
+            <div id="price-per-product">$0.00/product</div>
+            <div id="satisfaction">0 sats</div>
+            <div id="revenue-per-second">$0.00/second</div>
+            <div id="employees">0 employees</div>
+        </div>
+
+        <div class="departments">
+            <div class = "department" id="department-0">
+                <div class="department-info department-name">Food</div>
+                <div class="department-info" id="department-0-level">Level 0</div>
+                <div class="department-info" id="department-0-cost">+1 Level for $100.00</div>
+                <div class="department-info" id="department-0-stats">
+                    <ul>
+                        <li>0 ft<sup>2</sup></li>
+                        <li>0 products/customer</li>
+                        <li>$0.00/product</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>
