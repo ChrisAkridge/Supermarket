@@ -129,13 +129,15 @@ This balancing, combined with the exponential cost of levelling up a department,
 #### Department Tree
 Some departments have a maximum level at which they can be. When the user reaches this level, they must split the department into 2 or more sub-departments in order to keep levelling up. Sub-departments tend to have better revenue and upgrades than their parent departments. **When a department is split, all of its subdepartments are unlocked - the user cannot choose to unlock just one or a few.**
 
-In order to split a department, the user must have enough space to hold all subdepartments. If there is not enough space, the user isn't even presented with the "Unlock" option. The user must also have enough money to unlock all subdepartments. After a department is split, all of its subdepartments behave as standard departments.
+In order to split a department, the user must have enough space to hold all subdepartments. If there is not enough space, the user isn't even presented with the "Unlock" option, and is not made aware that subdepartments are even a thing. The user must also have enough money to unlock all subdepartments. After a department is split, all of its subdepartments behave as standard departments.
 
 #### Special Departments
 Certain departments are considered "special". These departments do not directly contribute to revenue, but instead improve other metrics, such as employee productivity, safety, and customer satisfaction. These departments also unlock powerful upgrade trees and display certain cosmetic statistics to the customer.
 
 ##### Receiving
-The Receiving department is a special department that, story-wise, receives the product to stock on the shelves. The user is shown "products received" and "products received per second" - cosmetic values equal to `products sold * 1.1` that have no other impact on gameplay. Levelling up Receiving increases customer satisfaction (still subject to diminishing returns per "Balancing Levelling" above) and increases the effectiveness of employees in all non-special department by 1% per level (see Employees below).
+~~The Receiving department is a special department that, story-wise, receives the product to stock on the shelves. The user is shown "products received" and "products received per second" - cosmetic values equal to `products sold * 1.1` that have no other impact on gameplay. Levelling up Receiving increases customer satisfaction (still subject to diminishing returns per "Balancing Levelling" above) and increases the effectiveness of employees in all non-special department by 1% per level (see Employees below).~~
+
+No, Receiving should count for more than this. Revisions coming.
 
 ##### Customer Service
 The Customer Service department is a special department that, story-wise, checks out customer orders and provides a Service Desk for customers to perform returns, among other things. Customer Service is a bit strange in that levelling it up only provides miniscule boosts to the effectiveness of its own employees and no other buffs. However, it has very powerful boosts every 50 levels, each of which add +10% to the customer satisfaction level.
@@ -175,7 +177,7 @@ Each department has at least one slot for a manager. A manager is a special empl
 Managers do not suffer accidents and are not affected by safety upgrades. They are also always active.
 
 #### Hiring Assistants
-After some gameplay, the user will have to manage hiring for many different departments. In order to simplify this, the user may hire a Hiring Assistant Manager that unlocks a menu with buttons that allow the user to hire 1, 10, or 100 employees to every role in every department. This will increase the wages accordingly, but will immediately provide the employee boosts. **If hiring that many employees will increases the wages above the revenue, the hiring button will be red.**
+After some gameplay, the user will have to manage hiring for many different departments. In order to simplify this, the user may hire a Hiring Assistant Manager that unlocks a menu with buttons that allow the user to hire 1, 10, or 100 employees to every role in every department. This will increase the wages accordingly, but will immediately provide the employee boosts. **If hiring that many employees will increases the wages above the revenue, the hiring button will only hire as many employees as can be hired (displaying that amount on the button, like ~~100~~ 44.**
 
 The user also has buttons to lay off 1, 10, or 100 employees to every role in every department. If there are less employees in a given role than the button laid off, all employees of that role will be laid off. This reduces wages.
 
@@ -184,7 +186,7 @@ Since employee wages increase linearly, but progress increases exponentially, th
 
 Wage negotiations may start at any point, but tend to start about every 3 to 5 days of real-world time. **During negotiations, all employees and managers will have their boosts reduced by 50%.** **The wage negotiation timer does not reset upon promotion (see Promotions below).** The wages they negotiate for will be about 20% to 30% of the revenue per second *as recorded at the start of negotiations*, to avoid the user reducing their revenue to reduce the amount they asked for. Depending on how much growth the user has had in the last few days, this could be an increase of hundreds or thousands of times.
 
-**Wage negotiations will not start if 20%-30% of the revenue at the stary of negotiations is less than their current wages, or if the user hasn't progressed more than a given percentage in revenue since the last negotiations.**
+**Wage negotiations will not start if 20%-30% of the revenue at the start of negotiations is less than their current wages, or if the user hasn't progressed more than a given percentage in revenue since the last negotiations.**
 
 Negotiations take anywhere from 30 minutes to 3 hours of real-world time. The user can immediately choose to accept the increase, thereby ending the negotiations and restoring the lost 50% to boosts, or they can wait it out. Negotiations may fail or succeed on their own randomly, but the more previous consecutive fails, the more likely this negotiation will succeed. Multiple failed negotiations also add +2% to the wages asked for at each new negotiation, capped at 50% of revenue per second.
 
@@ -239,7 +241,7 @@ Real retail stores are busier at certain times of day and certain times of the y
 | Holiday Shopping Season (Thanksgiving to Christmas)   | 1.5        |
 | Post-Holidays (December 26 to December 31)            | 1.0001     |
 
-The time used is the current system time and time zone. At each launch, if a network connection is available, the game checks the real current time against the system time, and if there's a large discrepancy (more than 1 minute either way), the user is chided, but the effect still takes place. The time check also occurs if a large (30 second or more) timeskip is detected. If no network connection is available, the time check does not occur.
+The time used is the current system time and time zone. At each launch, if a network connection is available, the game checks the real current time against the system time, and if there's a large discrepancy (more than 1 hour either way), the user is chided, but the effect still takes place. The time check also occurs if a large (30 second or more) timeskip is detected. If no network connection is available, the time check does not occur.
 
 The time of day multiplier changes in the first second of the time period. For instance, Drive Time starts at exactly 5:00:00pm each day. The time of year multiplier changes at midnight on the first day in the period and lasts until 11:59:59pm on the last day in the period.
 
@@ -263,7 +265,7 @@ Like most incremental games, Supermarket features the concept of prestige, where
 
 After the user earns enough money, their retail prowess attracts an industry mover-and-shaker called a VIP. The next VIP "costs" more than the next, and so forth, along an polynomial curve.
 
-The user can put VIP to use at reset. When the user has at least 1 VIP, they can reset the game, which is called a Promotion. Each promotion opens a new store that the store director has been assigned to run, and all the VIPs then follow. Each VIP gives a `+x%` boost to the Customers per Sat metric, where `x` is a value that may be tweaked in the future, but should be around 1-2%.
+The user can put VIPs to use at reset. When the user has at least 1 VIP, they can reset the game, which is called a Promotion. Each promotion opens a new store that the store director has been assigned to run, and all the VIPs then follow. Each VIP gives a `+x%` boost to the Customers per Sat metric, where `x` is a value that may be tweaked in the future, but should be around 1-2%.
 
 Each promotion forces the user to start over from nearly scratch. They keep any achievements, VIPs, and Promotion Upgrades (see below), but lose their departments, upgrades, and employees. They must start over, but they can use the VIP-boosted Customer per Sat to progress faster through the game.
 
@@ -339,4 +341,8 @@ By this point, any in-game clock now passes far more quickly. The character has 
 After enough promotions, the character becomes a deity of retail. The most powerful upgrades are available here. Upon the next promotion, the game ends once more, and the user receives another certificate, the save code for the game, a reset button, and a continue button. The continue button warns that there are no further upgrades available at this time and that the user has truly completed the game.
 
 ### Tracks
-A track is a sort of minigame that is unlocked when the user reaches a certain amount of revenue-earned-all-time.
+A track is a sort of minigame that is unlocked when the user reaches a certain amount of revenue-earned-all-time. Story-wise, tracks are comparable to company-prescribed learning courses that new employees usually take. Tracks appear as a small window on the right side of the screen (or another submenu on mobile) and are typically made of a currency, purchasable items that increase this currency and whose cost goes up per level, upgrades that boost the amount of currency generated, and achievements that are unlocked when the user passes a certain milestone. Sprinkled in the tracks are also fun facts about the thing the track is about.
+
+Some track ideas include Aquaculture, Spill Safety, MSDSes, Selling Techniques, Profit and Shrink, Proper Disposal, etc. Try _not_ to integrate proprietary information in these tracks. Some tracks are only available when certain other businesses are purchased; i.e. buying Distributors might add a CDL course.
+
+Finishing a track is done by achieving all the achievements. Doing so unlocks a powerful boosts to satisfaction, employee boosts, prices, etc. The user can have multiple tracks in play at once, and can replay tracks, although the boost can only be claimed once. Playing a track again also applies the full VIP boost to the track's earning rate.
