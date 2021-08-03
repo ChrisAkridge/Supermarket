@@ -1,0 +1,88 @@
+Supermarket Departments:
+(departments that are indented beneath others are subdepartments of that department)
+
+- Food
+	- Grocery
+		- Cheese and Dairy
+		- Frozen Foods
+		- Produce
+		- Meat and Seafood
+		- Delicatessen
+			- Hot and Ready Food
+			- Deli Meats and Cheeses
+			- Scoop'n'Serve Ice Cream
+		- Bakery
+		- Drinks and Coffee
+			- Soda, Water, and Flavoring
+			- Coffee and Caffeinated Beverages
+			- Alcohol
+		- Non-Perishables
+	- Consumables
+		- Cleaning and Laundry
+		- Paper Products
+		- Food Storage
+- General Merchandise
+	- Health and Beauty Care
+		- Pharmacy
+		- Medical Supplies, Medication, and Supplements
+		- Cosmetics
+	- Seasonal
+		- Health and Wellness
+		- Valentine's Center
+		- Easter Lane and Spring Garden
+		- Summer Furniture and Patio Supplies
+		- Back to School
+		- Halloween Street
+		- Christmas Haven
+	- Electronics
+		- Movies and Music
+		- Home Theater
+		- Computers, Laptops, and Tablets
+		- Cellular Phones and Plans
+		- Video Gaming
+		- Photo Center
+		- Accessories
+		- Home Office
+			- Printers
+			- Office Supplies
+			- Filing and Shipping
+	- Toys
+		- Educational Toys
+		- Dolls and Action Figures
+		- Collectibles and Trading Cards
+		- Drones and RC Vehicles
+		- Construction and Science Toys
+		- Beach and Bulk Toys
+	- Sporting Goods
+		- Camping and RV Supplies
+		- Exercise and Apparel
+		- Biking
+		- Travel and Luggage
+	- Hardware
+		- Automotive
+		- Tools
+		- Painting and Sanding
+		- Lighting and Electrical
+		- Plumbing and Bathroom
+		- Shoproom and Storage
+	- Pets
+		- Dog People
+		- Cat People
+		- Bird People
+	- Home Decor
+		- For Your Mantle
+		- Bedding and Fabrics
+		- Laundry and Cleaning
+		- Storage
+		- Arts and Crafts
+	- Fashions
+		- Women's Fashions
+		- Men's Fashions
+		- Kid's Fashions
+		- Infants
+		- Shoes
+		- Jewelry
+	- Books and Magazines
+		- Fiction and Non-Fiction
+		- Educational and Young Adult
+		- Reference and Magazines
