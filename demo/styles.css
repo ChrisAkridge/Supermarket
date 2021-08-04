@@ -1,6 +1,8 @@
 .departments {
     margin-top: 10px;
     background-color: lavender;
+    display: flex;
+    flex-direction: column;
 }
 
 .department {
