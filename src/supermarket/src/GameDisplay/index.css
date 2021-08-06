@@ -1,0 +1,151 @@
+/* ==== Universal ==== */
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Calibri, sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ==== Header ==== */
+header {
+	display: flex;
+	background-color: #005AC0;
+	color: white;
+	border-bottom: 1px solid black;
+}
+
+header div {
+	padding: 0 20px;
+}
+
+header a {
+	color: white;
+}
+
+#game-logo {
+	border-right: 1px solid black;
+}
+
+#game-logo h1 {
+	margin: 8px;
+}
+
+#welcome-panel {
+	align-self: stretch;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-right: 1px solid black;
+}
+
+#welcome-panel p {
+	margin: 0;
+}
+
+#hello {
+	font-size: 125%;
+}
+
+#username {
+	font-weight: bold;
+}
+
+#welcome-info {
+	font-size: 110%;
+}
+
+#menu {
+	align-self: center;
+	display: flex;
+	align-items: flex-start;
+	font-size: 125%;
+}
+
+.menu-separator {
+	margin: 0 10px;
+}
+
+.self-center {
+	align-self: center;
+}
+
+#promotion-link p {
+	margin: 0;
+}
+
+#promotion-link {
+	text-decoration: none;
+	background-color: #5283B8;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+#new-vips {
+	font-size: 80%;
+}
+
+#promote-text {
+	text-align: center;
+}
+
+/* ==== Main Container ==== */
+#main-container {
+	display: flex;
+	flex: 1;
+}
+
+#dept-tree {
+	width: 25%;
+	border-right: 1px solid black;
+	overflow-y: auto;
+}
+
+#main-panel {
+	width: 50%;
+	border-right: 1px solid black;
+	overflow-y: auto;
+}
+
+#upgrades-panel {
+	width: 25%;
+	overflow-y: auto;
+}
+
+/* ==== Main Panel ==== */
+.main-separator {
+	width: 95%;
+	margin: 10px 2.5% 10px 2.5%;
+	height: 1px;
+	border-top: 1px solid black;
+}
+
+#bank {
+	text-align: center;
+	font-size: 3rem;
+	margin: 0;
+}
+
+#sat-revenue {
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+#main-panel ul {
+	list-style: none;
+}
+
+#secondary-info-list {
+	padding-left: 1rem;
+	font-size: 1.25rem;
+}
+
+#employee-info-list {
+	padding-left: 1rem;
+	font-size: 1.25rem;
+}

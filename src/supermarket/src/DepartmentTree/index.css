@@ -1,0 +1,4 @@
+#dept-tree {
+    display: flex;
+    flex-direction: column;
+}

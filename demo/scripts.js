@@ -103,7 +103,8 @@ class Game {
         this.employees = 0;
 
         this.departments = [
-            new Department(0, 'Food', 100, 1.15, 1e50, 1, 1, 1000)
+            new Department(0, 'Food', 100, 1.15, 1e-9, 1, 1, 1000),
+            new Department(0, 'General Merchandise', 1000, 1.15, 1e-8, 2, 1.5, 2000)
         ];
     }
 
